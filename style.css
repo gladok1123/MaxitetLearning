@@ -1,0 +1,19 @@
+.qwe {
+    color: aliceblue;
+    border: 5px solid rgb(250, 7, 7);
+    border-radius: 4%;
+}
+.qwe{
+    background-color: rgb(0, 0, 0);
+}
+
+.qwe {animation: SlideIn 1s forwards;}
+
+@keyframes SlideIn {
+    0%{transform: translateX(-100%);}
+    
+    50%{transform: translateX(0%);}
+    
+    100%{transform: translateX(100%);}
+    
+}
