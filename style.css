@@ -8,9 +8,9 @@ html {
     font-family: "F42";
     font-size: large;
     background-image: url(background.png);
+    background-size: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-
     color: #ffd300;
     margin: 0;
 }
@@ -146,4 +146,31 @@ html {
     border: 1px solid #ffd300;
     border-collapse: collapse;
     padding: 8px;
+}
+
+.newsform {
+    backdrop-filter: blur(12px);
+    margin: 0% 40%;
+    padding: none;
+    border: 1px solid #ffd300;
+    border-radius: 12px;
+    margin: 0%;
+    width: 99%;
+    position: auto;
+}
+
+.newsformpadding{
+    padding: 1%;
+   
+}
+
+.newsformpadding input{
+    border: 1px solid #ffd300;
+    backdrop-filter: blur(12px);
+    background-color: #0000;
+    border-radius: 5px;
+    
+}
+.newsformpadding input:focus {
+    outline: 1px solid #b79800;
 }
