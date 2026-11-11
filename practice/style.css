@@ -1,50 +1,246 @@
-.btn{
+@import url(https://db.onlinewebfonts.com/c/27f2b6672b22df348351f1f2cd3fc19d?family=F42);
+
+/* ---------- Базовые настройки ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
+body.Body {
+    font-family: "F42", sans-serif;
+    font-size: large;
+    background-image: url(background.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-color: #000;      /* заглушка вместо белой полосы */
+    background-attachment: fixed;
+    color: #ffd300;
+    margin: 0;
+    min-width: 1500px;           /* body не сжимается меньше 1500px */
+}
+
+/* Когда окно уже 1500px — фон фиксируется и больше не сжимается */
+@media (max-width: 1500px) {
+    body.Body {
+        background-size: 1500px auto;
+        background-attachment: scroll;
+    }
+}
+
+.Body image {
+    object-fit: contain;
+    min-width: 1500px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- Навигация ---------- */
+.navHeader {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.listMain {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
     padding: 10px;
-    display: inline-block;
-    border: 1px solid #f6f6f3;
+}
+
+.itemMenu {
+    border: 1px solid #ffd300;
     border-radius: 10px;
-    background: linear-gradient(white 40%, rgb(130, 130, 131));
+    padding: 5px 10px;
+    position: relative;
 }
 
-.btnText{
-    color: black;
+.itemMenu:hover {
+    border-color: #b79800;
+}
+
+.itemMenu a {
+    color: #ffd300;
     text-decoration: none;
-    
 }
 
-.NavStyle{
+/* ---------- Выпадающее меню ---------- */
+#btnAllForSite {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.467);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    position: relative;
+}
+
+#btnAllForSite:hover #menuAllForSite {
+    display: block;
+}
+
+#menuAllForSite {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    padding: 4px 0;
+    min-width: 120px;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 0.1px solid #ffd300;
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+}
+
+#menuAllForSite a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #ffd300;
+}
+
+#menuAllForSite a:hover {
+    background: rgba(128, 128, 128, 0.281);
+    border-radius: 5px;
+}
+
+/* ---------- Hero ---------- */
+#hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: sticky;
-    backdrop-filter: blur(10px);
+    min-height: 60vh;
+    padding: 40px 20px;
 }
 
-.body{
-    background-image: url(background.jpg);
-    color: white;
-}
-
-.AboutBox {
-    justify-content: center;
-    text-align: center;
+.heroBox {
     margin: 0 auto;
-    padding: 12px;
-    backdrop-filter: blur(5px);
+    padding: 20px;
+    text-align: center;
+    color: #ffd300;
+    border: 0.1px solid #ffd300;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.2);
     width: 600px;
-    border-radius: 20px;
-    border: 4px solid rgba(128, 128, 128, 0.181);
+    max-width: 90%;
+    min-height: 240px;
+    animation: slideIn 1s forwards;
 }
 
-.AdvantagesBox {
-    justify-content: center;
-    align-items: center;
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* ---------- Контентные блоки ---------- */
+.contentBox {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 0.1px solid #ffd300;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.2);
+    scroll-margin-top: 100px;
+}
+
+.contentBox h2 {
     text-align: center;
+    margin-top: 0;
 }
 
-.GallaryBox {
-    justify-content: center;
-    align-items: center;
+/* ---------- Таблица ---------- */
+.tablepaddle {
+    margin: auto;
+    padding: 2%;
+}
+
+.table {
+    border-collapse: collapse;
+    border: 1px solid #ffd300;
+    padding: 0;
     text-align: center;
+    width: 100%;
+    color: #ffd300;
 }
 
+.table th,
+.table td {
+    border: 1px solid #ffd300;
+    padding: 8px;
+}
+
+/* ---------- Форма подписки ---------- */
+.newsform {
+    backdrop-filter: blur(12px);
+    border: 1px solid #ffd300;
+    border-radius: 12px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.newsformpadding {
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsformpadding label {
+    margin-top: 5px;
+}
+
+.newsformpadding input {
+    border: 1px solid #ffd300;
+    backdrop-filter: blur(12px);
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 8px;
+    color: #ffd300;
+    font-family: "F42", sans-serif;
+    font-size: 1rem;
+}
+
+.newsformpadding input:focus {
+    outline: 1px solid #b79800;
+}
+
+/* ---------- Кнопка ---------- */
+#submitbutton {
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(0, 0, 0, 0.467);
+    color: #ffd300;
+    border: 1px solid #ffd300;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-family: "F42", sans-serif;
+    font-size: large;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+#submitbutton:hover {
+    border-color: #b79800;
+    background: rgba(255, 211, 0, 0.15);
+}
+
+#submitbutton:active {
+    background: rgba(255, 211, 0, 0.3);
+}
