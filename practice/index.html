@@ -1,71 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <link rel="stylesheet" href="style.css"> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playplace</title>
+    <title>F42</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="body" id="body">
-    <header>
-        <nav class="NavStyle">
-            <ul class="NavHeaderStyle">
-                <li class="btn">
-                    <a class="btnText" href="#AboutBox">About shop</a>
-                </li>
+<body class="Body">
 
-                <li class="btn">
-                    <a class="btnText"  href="#AdvantagesBox">Advantages</a>
-                </li>
-
-                <li class="btn">
-                    <a class="btnText"  href="#GallaryBox">Gallary</a>
-                </li>
-
-                <li class="btn">
-                    <a class="btnText"  href="#ContactBox">Contacts</a>
-                </li>
-            </ul>
-        </nav>
+    <header class="navHeader">
+        <ul class="listMain">
+            <li class="itemMenu"><a href="#hero">Главная</a></li>
+            <li class="itemMenu"><a href="#about">О нас</a></li>
+            <li class="itemMenu"><a href="#table">Таблица</a></li>
+            <li class="itemMenu"><a href="#subscribe">Подписка</a></li>
+            <li class="itemMenu" id="btnAllForSite">
+                Меню
+                <div id="menuAllForSite">
+                    <a href="#hero">Главная</a>
+                    <a href="#about">О нас</a>
+                    <a href="#table">Таблица</a>
+                    <a href="#subscribe">Подписка</a>
+                </div>
+            </li>
+        </ul>
     </header>
 
-    <main>
-        <section id="AboutBox">
-            <div class="AboutBox">
-                <h1>We sell best playtoys for all ages! Also we have refund politic!</h1>
-                <h2>In assortiment we have soft toys and also solid toys like lego cars and many more!</h2>
-            </div>
-        </section>
+    <section id="hero">
+        <div class="heroBox">
+            <h1>Добро пожаловать</h1>
+            <p>Это наш сайт с фоном, меню и формой подписки.</p>
+        </div>
+    </section>
 
-        <section id="AdvantagesBox">
-            <div class="AdvantagesBox">
-               <h1>Fast and eazy refund then other toy stores</h1>
-               <h2>High rating on google maps</h2>
-            </div>
-        </section>
+    <section id="about" class="contentBox">
+        <h2>О нас</h2>
+        <p>Здесь текст о сайте. Блок с прозрачным фоном и размытием.</p>
+    </section>
 
-        <section id="GallaryBox">
-            <div>
-                
-            </div>
-        </section>
+    <section id="table" class="contentBox">
+        <h2>Таблица</h2>
+        <div class="tablepaddle">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Название</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Пример</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Пример</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Пример</td>
+                        <td>300</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-        <section id="ContactBox">
-            <div class="ContactBox">
-                <div class="ContactBox">
-                    <h2>Contact us</h2>
-                    <form method="post">
-                        <label for="email">Email:</label>
-                        <input type="email" name="email">
-                        <label for="tel">Phone number:</label>
-                        <input type="tel" name="email">
-                        <input type="button" id="contactButton" class="contactbutton" value="subscribe">
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+    <section id="subscribe" class="contentBox">
+        <h2>Подписка</h2>
+        <form method="post" class="newsform">
+            <div class="newsformpadding">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
 
-    <script src="script.js"></script>
+                <label for="tel">Phone number:</label>
+                <input type="tel" name="tel" id="tel">
+
+                <button type="submit" name="submitbutton" id="submitbutton">Subscribe</button>
+            </div>
+        </form>
+    </section>
+
 </body>
 </html>
